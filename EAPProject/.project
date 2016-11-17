@@ -3,6 +3,7 @@
 	<name>EAPProject</name>
 	<comment></comment>
 	<projects>
+		<project>EJBOpenEJB</project>
 		<project>MyFirstEJBProject</project>
 	</projects>
 	<buildSpec>

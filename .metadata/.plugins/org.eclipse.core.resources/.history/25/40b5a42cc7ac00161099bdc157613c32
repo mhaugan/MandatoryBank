@@ -1,0 +1,32 @@
+package sessionBeans;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class HelloWorld
+ */
+@Stateless
+@LocalBean
+public class HelloWorld implements HelloWorldRemote {
+
+	private String visitors;
+	/**
+   	* Default constructor.
+   	*/
+	public HelloWorld() {
+		visitors = new String();
+	}
+	
+	public String sayHello(String to) {
+		String retval = "Hei og hå til \"" + to + "\"";
+		if (visitors.equals("")) {
+			visitors = to;
+			return retval;
+		}
+		retval += ". Samtidig en hilsning til de som var her før, nemlig: " + visitors;
+		visitors += ", " + to;
+		return retval;
+	}
+
+}

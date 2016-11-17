@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;WAPProject&apos; to &apos;EAPProject&apos;" description="Rename resource &apos;WAPProject&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/WAPProject" name="EAPProject" stamp="1479375692862" updateReferences="true"/>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;WAPProject&apos; to &apos;EAPProject&apos;" description="Rename resource &apos;WAPProject&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/WAPProject" name="EAPProject" stamp="1479375692862" updateReferences="true"/>&#x0A;<refactoring comment="Delete resource &apos;EAPProject&apos;" deleteContents="false" description="Delete resource &apos;EAPProject&apos;" element1="/EAPProject" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1479395318981"/>
 </session>

@@ -1,0 +1,21 @@
+package entity;
+
+import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+import sessionBeans.HelloWorldRemote;
+
+public class Client {
+	public static void main(String[] args) throws Exception {
+		Properties props = new Properties();
+		props.put(Context.INITIAL_CONTEXT_FACTORY,
+			"org.apache.openejb.client.RemoteInitialContextFactory");
+		Context context = new InitialContext(props);
+		HelloWorldRemote hello = (HelloWorldRemote)context.lookup("HelloWorldRemote");
+		System.out.println(hello.sayHello("Snorken"));
+		System.out.println(hello.sayHello("Mummitrollet"));
+		System.out.println(hello.sayHello("Lille My"));
+	}
+}

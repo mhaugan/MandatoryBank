@@ -1,0 +1,29 @@
+package test;
+
+import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+//import myBeans.HelloBeanRemote;
+import sessionBeans.PersonerRemote;
+
+public class TestEJB {
+
+	public static void main(String[] args) throws Exception {
+//		PersonTest pt = new PersonTest();
+//		pt.setUp();
+//		pt.addPerson();
+//		pt.list();
+//		pt.remove();
+//		pt.tearDown();
+		
+		Properties props = new Properties();
+		props.put(Context.INITIAL_CONTEXT_FACTORY,
+			"org.apache.openejb.client.RemoteInitialContextFactory");
+		Context context = new InitialContext(props);
+		PersonerRemote hello = (PersonerRemote)context.lookup("PersonerRemote");
+		System.out.println("Working!");
+		System.out.println(hello.sayHello("Mats"));
+	}
+}

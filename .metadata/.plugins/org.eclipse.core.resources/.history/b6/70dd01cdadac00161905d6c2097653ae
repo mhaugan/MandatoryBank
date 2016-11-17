@@ -1,0 +1,70 @@
+package entity;
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.*;
+@Entity
+@Table (name = "Person")
+public class Person implements Serializable {
+
+	@Column (name = "id" )
+	@Id
+	@GeneratedValue (strategy = GenerationType.SEQUENCE )
+	private int id;
+	@Column (name = "Fodselsdato")
+	private Date Fodselsdato;
+	@Column (name = "Fodselsnummer", length = 5)
+	private String Fodselsnummer;
+	@Column (name = "Navn", length = 30)  
+	private String Navn;
+	@Column (name = "Adresselinje_1", length = 30)
+	private String Adresselinje_1;
+	@Column (name = "Adresselinje_2", length = 30)
+	private String Adresselinje_2;
+	@Column (name = "Postnummer", length = 4)
+	private String Postnummer;
+	@Column (name = "Poststed", length = 35)
+	private String Poststed;
+	@Column (name = "Passord")
+	private String Passord;
+	@Column (name = "PIN_kode", length = 4)
+	private String PIN_kode;
+	@Column (name = "Kommentar", length = 200)
+	private String Kommentar;
+
+	/**
+	   * Konstruktører
+	   */
+	public Person( int id, Date Fodselsdato, String Fodselsnummer, String Navn,
+	String Adresselinje_1, String Adresselinje_2, String Postnummer,
+	String Poststed, String Passord, String PIN_kode, String Kommentar) {
+		setId(id);
+		setFodselsdato(Fodselsdato);
+		setFodselsnummer(Fodselsnummer);
+		setNavn(Navn);
+		setAdresselinje_1(Adresselinje_1);
+		setAdresselinje_2(Adresselinje_2);
+		setPostnummer(Postnummer);
+		setPoststed(Poststed);
+		setPassord(Passord);
+		setPIN_kode(PIN_kode);
+		setKommentar(Kommentar);
+	}
+	
+	public Person(Date Fodselsdato, String Fodselsnummer, String Navn, String Adresselinje_1,
+			String Adresselinje_2, String Postnummer, String Poststed, String Passord,
+			String PIN_kode, String Kommentar) {
+		setFodselsdato(Fodselsdato);
+		setFodselsnummer(Fodselsnummer);
+		setNavn(Navn);
+		setAdresselinje_1(Adresselinje_1);
+		setAdresselinje_2(Adresselinje_2);
+		setPostnummer(Postnummer);
+		setPoststed(Poststed);
+		setPassord(Passord);
+		setPIN_kode(PIN_kode);
+		setKommentar(Kommentar);
+	}
+	
+	public Person () {
+	}
+}

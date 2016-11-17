@@ -1,0 +1,11 @@
+<persistence xmlsn="http://java.sun.com/xml/ns/persistence" version="1.0">
+	<persistence-unit name="bankdb-unit" transaction-type="TRANSACTION">
+		<jta-data-source>BankDBDataSource</jta-data-source>
+		<non-jta-data-source>Unmanaged_BankDBDataSource</non-jta-data-source>
+		<class>entity.Person</class>
+		<properties>
+			<property name="openjpa.jdbc.SynchronizedMappings" value="buildSchema(ForeignKeys=true)"
+			/>
+		</properties>
+	</persistence-unit>
+</persistence>
