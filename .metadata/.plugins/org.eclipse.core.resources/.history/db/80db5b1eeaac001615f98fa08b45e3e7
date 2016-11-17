@@ -1,0 +1,53 @@
+package atm;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
+import entity.Account;
+import entity.Person;
+
+public class ATMMachine {
+
+	private String location;
+	private int Id, deposit, withdraw, transferMoney;
+	private boolean validCard;
+	private double balance;
+	
+	public ATMMachine() {
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Welcome to bank\nEnter your birtdate and password to verify: ");
+		
+		
+		// TODO Auto-generated method stub
+		Calendar c = Calendar.getInstance();
+		c.set(1988, 00, 00, 01, 01, 01);
+		Person person = new Person(1, c.getTime(),"080591", "Mats", "Hokkåsveien", "", "8028", "Bodo", "passord", "1234", "");
+		Account acc = new Account();
+		
+		Scanner uNameScanner = new Scanner(System.in);
+		String uName = uNameScanner.next();
+//		uNameScanner.close();
+		if(uName == person.getFodselsnummer()){
+			System.out.println("Password: ");
+			Scanner pwScanner = new Scanner(System.in);
+			String pw = pwScanner.next();
+			pwScanner.close();
+			
+			Scanner accScanner = new Scanner(System.in);
+			System.out.println("Enter pin: ");
+			String accScannerTmp = accScanner.next();
+			int pin = Integer.parseInt(accScannerTmp);
+			if(acc.getVerifyPIN() == pin){
+				System.out.println(acc.getBalance());
+			}
+		}
+	}
+}
+
+//
+//int id, Date Fodselsdato, String Fodselsnummer, String Navn,
+//String Adresselinje_1, String Adresselinje_2, String Postnummer,
+//String Poststed, String Passord, String PIN_kode, String Kommentar

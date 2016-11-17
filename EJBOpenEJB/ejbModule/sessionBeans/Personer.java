@@ -40,9 +40,4 @@ public class Personer implements PersonerRemote {
 		List <Person> l = query.getResultList();
 		return l;
 	}
-	@Override
-	public String sayHello(String s) {
-		// TODO Auto-generated method stub
-		return "Hello: " + s;
-	}
 }

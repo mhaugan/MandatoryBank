@@ -1,0 +1,12 @@
+package entity;
+
+import javax.persistence.Column;
+
+public class Account {
+
+	@Column (name = "Balance")
+	private double Balance;
+	
+	@Column (name = "Account Number", length = 11)
+	private String AccountNumber;
+}

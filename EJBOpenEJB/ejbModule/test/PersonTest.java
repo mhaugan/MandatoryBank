@@ -30,6 +30,7 @@ public class PersonTest extends TestCase {
 	}
 	@Override
 	public void tearDown() throws Exception { }
+	
 	public void test() throws Exception {
 		List<Person> list = personer.list();
 		int assertsize = list.size();

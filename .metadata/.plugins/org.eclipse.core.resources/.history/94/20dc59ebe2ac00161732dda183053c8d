@@ -1,0 +1,35 @@
+package entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+
+public class Account implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Column (name = "Balance")
+	private double balance;
+	
+	@Column (name = "Account_Number", length = 11)
+	private int accountNumber;
+	
+	@Column (name = "Verify_PIN", length = 4)
+	private int verifyPIN;
+	
+	@Column (name = "Verify_Person")
+	private int verifyId;
+	
+	public Account() {
+	}
+	
+	public Account(double balance, int accountNumber, int verifyPIN, int verifyId) {
+		this.balance = balance;
+		this.accountNumber = accountNumber;
+		this.verifyPIN = verifyPIN;
+		this.verifyId = verifyId;
+	}
+}

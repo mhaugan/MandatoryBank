@@ -39,6 +39,13 @@ public class Person implements Serializable {
 	/**
 	   * Constructor
 	   */
+	
+	public Person(String socialSecurityNumber, String name, String password, String pin) {
+		this.Fodselsnummer = socialSecurityNumber;
+		this.Navn = name;
+		this.Passord = password;
+		this.PIN_kode = pin;
+	}
 	public Person( int id, Date Fodselsdato, String Fodselsnummer, String Navn,
 			String Adresselinje_1, String Adresselinje_2, String Postnummer,
 			String Poststed, String Passord, String PIN_kode, String Kommentar) {
